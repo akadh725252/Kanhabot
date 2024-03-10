@@ -3,8 +3,8 @@
 # This file is a part of < https://github.com/Teamkanha/kanha/ >
 # PLease read the GNU Affero General Public License in <https://www.github.com/Teamkanha/kanha/blob/main/LICENSE/>.
 
-Run git clone https://github.com/kanhagarg7/kanhabot:main
-
+RUN git clone https://github.com/kanhagarg7/kanhabot:main
+Run cd kanhabot
 # set timezone
 ENV TZ=Asia/Kolkata
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
