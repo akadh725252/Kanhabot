@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# kanha - UserBot
+# Copyright (C) 2021-2023 Teamkanha
+#
+# This file is a part of < https://github.com/Teamkanha/kanha/ >
+# PLease read the GNU Affero General Public License in <https://www.github.com/Teamkanha/kanha/blob/main/LICENSE/>.
+
+if [ -d "resources" ]
+then
+    echo "Current directory Identified.."
+else
+    apt install git -y
+    git clone https://github.com/Teamkanha/kanha
+    cd kanha
+fi
+bash resources/startup/termux.sh
