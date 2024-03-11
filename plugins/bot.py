@@ -115,7 +115,7 @@ async def lol(ult):
     header = udB.get_key("ALIVE_TEXT") or get_string("bot_1")
     y = "main"
     xx = "kanha"
-    rep = "@kanha_gar"
+    rep = "@kanha_garg1"
     kk = f" `[{y}]({rep})` "
     if inline:
         kk = f"<a href={rep}>{y}</a>"
