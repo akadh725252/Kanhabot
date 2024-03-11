@@ -411,7 +411,7 @@ async def do_click(msg, *buttons):
 
 # clicks ready button
 async def get_ready(chat):
-    async with ultroid_bot.conversation(chat, timeout=16) as conv:
+    async with kanha_bot.conversation(chat, timeout=16) as conv:
         response = conv.wait_event(
             NewMessage(incoming=True, from_users=HEXA_ID, func=lambda e: e.mentioned)
         )
