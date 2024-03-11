@@ -1,6 +1,4 @@
-# Important Requirements here.
-
-https://github.com/New-dev0/Telethon/archive/platy.zip
+telethon
 python-decouple
 python-dotenv
 akinator
@@ -29,4 +27,3 @@ requests
 tabulate
 telegraph
 tgcrypto
-youtube-search-python
