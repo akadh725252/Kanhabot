@@ -62,10 +62,8 @@ async def handle_hunt(event):
 @kanha_bot.on(events.MessageEdited(chats=chat))
 async def cacther(event):
     if hunt:
-        message = await bot.get_messages(chat, ids=event.message.id)
+        message = await kanha_bot.get_messages(chat, ids=event.message.id)
         await message.click(1, 1)
-        await message.click(0, 1)
-        await message.click(1, 0)
         
         if any(keyword in event.message.text for keyword in ['fled', 'fainted', 'caught', '+']):
             await zzz(randint(2, 5))
