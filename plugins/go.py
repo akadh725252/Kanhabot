@@ -13,13 +13,14 @@ list = ["A wild"]
 async def begin(event):
     global hunt
     hunt = True
-    x = await bot.send_message(chat, "/hunt")
-    try:
-        async with kanha_bot.conversation('@Hexamonbot') as conv:
-            await conv.get_response(x.id)
-    except:
-        await zzz(1, 3)
-        await conv.send_message(chat, "/hunt")
+    async with kanha_bot.conversation('@Hexamonbot') as conv:
+        x = await conv.send_message(chat, "/hunt")
+        try:
+            async with kanha_bot.conversation('@Hexamonbot') as conv:
+                await conv.get_response(x.id)
+        except:
+            await zzz(1, 3)
+            await conv.send_message(chat, "/hunt")
 
 @kanha_bot.on(events.NewMessage(chats=chat, incoming=True))
 async def handle_hunt(event):
