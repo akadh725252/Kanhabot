@@ -13,9 +13,9 @@ list = ["A wild"]
 async def begin(event):
     global hunt
     hunt = True
-    x = await client.send_message(chat, "/hunt")
     try:
         async with kanha_bot.conversation('@Hexamonbot') as conv:
+            x = await conv.send_message(chat, "/hunt")
             await conv.get_response(x.id)
     except:
         await zzz(1, 3)
@@ -33,9 +33,9 @@ async def handle_hunt(event):
         elif "TM" in text:
             print(event.message.text)
             await zzz(randint(5, 7))
-            x = await conv.send_message(chat, "/hunt")
             try:
                 async with bot.conversation('@Hexamonbot') as conv:
+                    x = await client.send_message(chat, "/hunt")
                     await conv.get_response(x.id)
             except:
                 await zzz(3, 7)
@@ -49,9 +49,9 @@ async def handle_hunt(event):
                 pass
             else:
                 await zzz(randint(6, 8))
-                x = await conv.send_message(chat, "/hunt")
                 try:
                     async with bot.conversation('@Hexamonbot') as conv:
+                        x = await conv.send_message(chat, "/hunt")
                         await conv.get_response(x.id)
                 except:
                     await zzz(3, 5)
@@ -69,9 +69,9 @@ async def cacther(event):
         
         if any(keyword in event.message.text for keyword in ['fled', 'fainted', 'caught', '+']):
             await zzz(randint(2, 5))
-            x = await conv.send_message(chat, "/hunt")
             try:
                 async with kanha_bot.conversation('@Hexamonbot') as conv:
+                    x = await conv.send_message(chat, "/hunt")
                     await conv.get_response(x.id)
             except:
                 await zzz(1, 3)
