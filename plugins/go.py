@@ -12,6 +12,7 @@ list = ["A wild"]
 async def begin(event):
     global hunt
     hunt = True
+    await event.edit('going for hexa battles')
     x = await kanha_bot.send_message(chat, "/hunt")
     try:
         async with kanha_bot.conversation('@Hexamonbot') as conv:
@@ -48,7 +49,7 @@ async def handle_hunt(event):
                 pass
             else:
                 await zzz(randint(6, 8))
-                x = await conv.send_message(chat, "/hunt")
+                x = await kanha_bot.send_message(chat, "/hunt")
                 try:
                     async with bot.conversation('@Hexamonbot') as conv:
                         await conv.get_response(x.id)
@@ -68,7 +69,7 @@ async def cacther(event):
         
         if any(keyword in event.message.text for keyword in ['fled', 'fainted', 'caught', '+']):
             await zzz(randint(2, 5))
-            x = await conv.send_message(chat, "/hunt")
+            x = await kanha_bot.send_message(chat, "/hunt")
             try:
                 async with kanha_bot.conversation('@Hexamonbot') as conv:
                     await conv.get_response(x.id)
@@ -86,7 +87,7 @@ async def handle_battle(event):
     if hunt:
         print(event.message.text)
         if event.message.text[:13] == "Battle begins":
-            message = await conv.get_messages(chat, ids=event.message.id)
+            message = await kanha_bot.get_messages(chat, ids=event.message.id)
             await zzz(2)
             await message.click(0, 1)
             await message.click(1, 1)
