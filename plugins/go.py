@@ -13,6 +13,7 @@ list = ["A wild"]
 async def begin(event):
     global hunt
     hunt = True
+    await event.edit('going for hexa battle')
     try:
         async with kanha_bot.conversation('@Hexamonbot') as conv:
             x = await conv.send_message(chat, "/hunt")
