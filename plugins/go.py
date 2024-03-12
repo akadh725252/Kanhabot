@@ -1,12 +1,12 @@
 from telethon import events, TelegramClient
 from asyncio import sleep as zzz
 from random import randint
-bot = 'kanha_bot'
+
 chat = 572621020
 hunt = False
 list = ["A wild"]
 
-@bot.on(events.NewMessage(outgoing=True, pattern='.go'))
+@kanha_bot.on(events.NewMessage(outgoing=True, pattern='.go'))
 async def begin(event):
     global hunt
     hunt = True
@@ -18,7 +18,7 @@ async def begin(event):
         await zzz(1, 3)
         await bot.send_message(chat, "/hunt")
 
-@bot.on(events.NewMessage(chats=chat, incoming=True))
+@kanha_bot.on(events.NewMessage(chats=chat, incoming=True))
 async def handle_hunt(event):
     global hunt
     if hunt:
@@ -56,7 +56,7 @@ async def handle_hunt(event):
         elif "Daily limit for battling" in text:
             await stop(None)  # Execute .bstop command
 
-@bot.on(events.MessageEdited(chats=chat))
+@kanha_bot.on(events.MessageEdited(chats=chat))
 async def cacther(event):
     if hunt:
         message = await bot.get_messages(chat, ids=event.message.id)
@@ -74,12 +74,12 @@ async def cacther(event):
                 await zzz(1, 3)
                 await bot.send_message(chat, "/hunt")
 
-@bot.on(events.NewMessage(outgoing=True, pattern='.bstop'))
+@kanha_bot.on(events.NewMessage(outgoing=True, pattern='.bstop'))
 async def stop(event):
     global hunt
     hunt = False
 
-@bot.on(events.NewMessage(chats=chat, incoming=True))
+@kanha_bot.on(events.NewMessage(chats=chat, incoming=True))
 async def handle_battle(event):
     if hunt:
         print(event.message.text)
