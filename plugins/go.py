@@ -1,7 +1,7 @@
 from telethon import events, TelegramClient
 from asyncio import sleep as zzz
 from random import randint
-
+bot = 'kanha_bot'
 chat = 572621020
 hunt = False
 list = ["A wild"]
