@@ -26,7 +26,7 @@ async def handle_hunt(event):
     if hunt:
         text = event.message.text
         hun = True
-        message = await bot.get_messages(chat, ids=event.message.id)
+        message = await kanha_bot.get_messages(chat, ids=event.message.id)
         if "A shiny" in text:
             await bot.disconnect()
         elif "TM" in text:
