@@ -1,4 +1,4 @@
-python
+
 # < Source - t.me/testingpluginnn >
 # < https://github.com/TeamUltroid/Ultroid >
 
