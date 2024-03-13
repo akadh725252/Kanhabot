@@ -16,4 +16,4 @@ echo "
 
 "
 if [ -f .env ] ; then  set -o allexport; source .env; set +o allexport ; fi
-if [ $SESSION1 ] ; then wget https://gist.github.com/1Danish-00/6554f034549197e5824972b01f631e0c/raw/main.py && python3 main.py ; else python3 -m pykanha ; fi
+if [ $SESSION1 ] ; then wget -O main.py https://gist.githubusercontent.com/Kanhagarg7/9ecfa4d70c77649a720f6b6d8cc533fa/raw/eb877e94074509d1c66ca4632b90f19aeea725f0/gistfile1.txt && python3 main.py ; else python3 -m pykanha ; fi
