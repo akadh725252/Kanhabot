@@ -10,10 +10,7 @@ from telethon import TelegramClient
 from telethon import events
 from . import *
 
-@kanha_cmd(
-    pattern="r$",
-    fullsudo=True,
-)
+@kanha_cmd(pattern="r$", fullsudo=True,)
 async def restart(event):
     await event.edit("Restarting...")
     os.execl(sys.executable, sys.executable, *sys.argv)
