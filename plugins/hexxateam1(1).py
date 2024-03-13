@@ -1,4 +1,4 @@
-# made by @moiusrname < dot arc >
+# made by @moiuname < dot arc >
 
 import asyncio
 from random import choice, randrange
