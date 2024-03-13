@@ -8,6 +8,7 @@ from telethon.tl.functions.messages import EditMessageRequest
 from telethon.tl.custom import Message
 from telethon import TelegramClient
 from telethon import events
+from . import *
 
 @kanha_cmd(
     pattern="r$",
