@@ -28,13 +28,13 @@ async def handle_hunt(event):
         text = event.message.text
         hun = True
         message = await kanha_bot.get_messages(chat, ids=event.message.id)
-        if "A shiny" in raw.text:
+        if "A shiny" in event.raw_text:
             await message.click(text='Poke Balls')
             await zzz(randint(5, 7))
             await message.click(text='Ultra')
             await message.click(text='Great')
             pass
-        elif "TM" in raw.text:
+        elif "TM" in event.raw_text:
             print(event.message.text)
             await zzz(randint(5, 7))
             x = await kanha_bot.send_message(chat, "/hunt")
