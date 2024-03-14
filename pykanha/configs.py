@@ -53,3 +53,9 @@ class Var:
     DATABASE_URL = config("DATABASE_URL", default=None)
     # for MONGODB users
     MONGO_URI = config("MONGO_URI", default=None)
+    API_ID1 = config("API_ID1", default=6, cast=int)
+    API_HASH1 = config("API_HASH1", default="eb06d4abfb49dc3eeb1aeb98ae0f581e")
+    API_ID2 = config("API_ID2", default=6, cast=int)
+    API_HASH2 = config("API_HASH2", default="eb06d4abfb49dc3eeb1aeb98ae0f581e")
+    REDIS_URI1 = config("REDIS_URI1", default=REDIS_URI) or config("REDIS_URL1", default=REDIS_URI)
+    REDIS_PASSWARD1 = config("REDIS_PASSWORD1", default=REDIS_PASSWORD)
