@@ -1,6 +1,8 @@
 from telethon import events, TelegramClient
 from asyncio import sleep as zzz
 from random import randint
+import os
+import sys
 
 from . import *
 
@@ -63,6 +65,7 @@ async def handle_hunt(event):
         elif "Daily limit for battling" in event.raw_text:
             await zzz(randint(5,7))
             await kanha_bot.send_message(me, 'emd')
+            os.execl(sys.executable, sys.executable, *sys.argv)
 
 @kanha_bot.on(events.MessageEdited(chats=chat))
 async def cacther(event):
