@@ -19,7 +19,7 @@ async def begin(event):
             await conv.get_response(x.id)
     except:
         await zzz(1, 3)
-        await conv.send_message(chat, "/hunt")
+        await kanha_bot.send_message(chat, "/hunt")
 
 @kanha_bot.on(events.NewMessage(chats=chat, incoming=True))
 async def handle_hunt(event):
@@ -43,7 +43,7 @@ async def handle_hunt(event):
                     await conv.get_response(x.id)
             except:
                 await zzz(3, 7)
-                await conv.send_message(chat, "/hunt")
+                await kanha_bot.send_message(chat, "/hunt")
         elif any(item in text for item in list) and hunt:
             await message.click(0)
             await message.click(0, 1)
@@ -59,10 +59,10 @@ async def handle_hunt(event):
                         await conv.get_response(x.id)
                 except:
                     await zzz(3, 5)
-                    await conv.send_message(chat, "/hunt")
+                    await kanha_bot.send_message(chat, "/hunt")
         elif "Daily limit for battling" in event.raw_text:
             await zzz(randint(5,7))
-            await kanha_bot.send_message(me, 'limit emd')# Execute .bstop command
+            await kanha_bot.send_message(me, 'emd')
 
 @kanha_bot.on(events.MessageEdited(chats=chat))
 async def cacther(event):
@@ -78,7 +78,7 @@ async def cacther(event):
                     await conv.get_response(x.id)
             except:
                 await zzz(1, 3)
-                await conv.send_message(chat, "/hunt")
+                await kanha_bot.send_message(chat, "/hunt")
 
 @kanha_bot.on(events.NewMessage(outgoing=True, pattern='.bstop'))
 async def stop(event):
