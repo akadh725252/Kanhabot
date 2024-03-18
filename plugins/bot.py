@@ -371,8 +371,8 @@ async def re_fetch(m):
 
 
 async def watch_edits(chat, msg_id, timeout=20):
-    async with ultroid_bot.conversation(chat, timeout=timeout) as conv:
-        func = lambda e: e.id == msg_id and search(rf"(?i)Current turn: (.+){ultroid_bot.uid}", e.message.text)
+    async with kanha_bot.conversation(chat, timeout=timeout) as conv:
+        func = lambda e: e.id == msg_id and search(rf"(?i)Current turn: (.+){kanha_bot.uid}", e.message.text)
         response = conv.wait_event(
             MessageEdited(
                 incoming=True,
