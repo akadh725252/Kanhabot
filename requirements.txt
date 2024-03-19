@@ -1,7 +1,6 @@
 telethon
 python-decouple
 python-dotenv
-akinator
 apscheduler
 aiohttp
 bs4
@@ -19,11 +18,8 @@ oauth2client
 opencv-python-headless
 pillow>=7.0.0
 profanitydetector
-psutil
 pypdf2>=1.26.0
 pytz
-qrcode
 requests
 tabulate
 telegraph
-tgcrypto
