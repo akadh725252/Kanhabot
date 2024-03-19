@@ -86,7 +86,7 @@ async def auto_battle(chat, msg_id):
     elif "team" in response.buttons[0][0].text.lower():
         return await click_rnd_button(response)
     else:
-        if 'dodged' in response.raw_text:
+        if 'HP' in response.raw_text:
             await do_click(response, 0, 0)
             return
         if 'missed.' in response.raw_text:
