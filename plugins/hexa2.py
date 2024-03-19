@@ -86,9 +86,12 @@ async def auto_battle(chat, msg_id):
     elif "team" in response.buttons[0][0].text.lower():
         return await click_rnd_button(response)
     else:
-        rndm = lambda: randrange(2)
-        return await do_click(response, rndm(), rndm())
-
+        if 'missed' in event.raw_text:
+            await do_click(0,0)
+            return 
+        if 'dodged' in event.raw_text:
+            await do_click(0,0)
+            return
 @kanha_bot.on(
     NewMessage(
         incoming=True,
