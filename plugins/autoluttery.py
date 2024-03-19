@@ -22,4 +22,5 @@ async def my_event_handler(event):
 async def my_event_handler(event):
       if 'Your numbers:' in event.raw_text:
          await asyncio.sleep(4)
-         await event.click(0)
+         await event.click(0, 0)
+         await event.click(text='Random')
