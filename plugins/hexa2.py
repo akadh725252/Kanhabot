@@ -1,3 +1,13 @@
+
+import asyncio
+from random import choice, randrange
+from re import search
+
+from telethon.events import NewMessage, MessageEdited
+from telethon.errors import DataInvalidError, MessageNotModifiedError
+from telethon.tl.custom import Message
+
+from . import *
 HEXA_ID = 572621020
 
 
