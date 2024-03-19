@@ -118,7 +118,6 @@ async def main(e, other_usr):
         response = await watch_edits(e.chat_id, hexa_response.id)
         if "Daily limit for battling has been reached, no prize will be given" in response.raw_text:
             os.execl(sys.executable, sys.executable, *sys.argv)
-            return 
         elif isinstance(response, Message):
             resp = await do_click(response, 0, 0)
             if resp == True:
