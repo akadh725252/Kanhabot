@@ -106,7 +106,7 @@ async def main(e, other_usr):
 
     try:
         await e.edit(
-            f"**Challenge Sent.** \n\nWaiting for {make_mention(usr_response.sender)}!"
+            f"**Challenge Sent.** \n\nWaiting to get accept!"
         )
         await asyncio.sleep(1)
     except MessageNotModifiedError:
