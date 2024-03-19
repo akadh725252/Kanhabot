@@ -89,12 +89,6 @@ async def auto_battle(chat, msg_id):
         if 'HP' in response.raw_text:
             await do_click(response, 0, 0)
             return
-        if 'missed.' in response.raw_text:
-            await do_click(response, 0, 0)
-            return 
-        if 'dodged' in response.raw_text:
-            await do_click(response, 0, 0)
-            return
 @kanha_bot.on(
     NewMessage(
         incoming=True,
@@ -118,21 +112,3 @@ async def autohemxa(e):
     except Exception as exc:
         LOGS.exception(exc)
         await msg.respond(f"**2nd ID Error** \n\nGot {exc.__class__} \n`{exc}`")
-
-@kanha_bot.on(events.NewMessage( incoming=True))
-async def x(event) :
-  chat = "HeXamonbot"
-  if "done.click.team1" in event.raw_text :
-    async with kanha_bot.conversation(chat) as conv :
-      await conv.send_message("/myteam")
-      await asyncio.sleep(2)
-      a = await conv.get_response()
-      if a :
-        await a.click(text = 'Team 2')
-      if not a :
-        await conv.send_message("/myteam")
-      await event.respond(a)
-      await asyncio.sleep(2)
-      b = await conv.get_response()
-      if b :
-        await b.click(text = 'Team 2')
