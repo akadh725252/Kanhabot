@@ -114,13 +114,8 @@ async def main(e, other_usr):
 
     while True:
         response = await watch_edits(e.chat_id, hexa_response.id)
-        if isinstance(response, Message):
-            resp = await do_click(response, 0, 0)
-            if resp == True:
-                return
-        elif "Daily limit for battling has been reached, no prize will be given" in response.raw_text:
+        if "Daily limit for battling has been reached, no prize will be given" in response.raw_text:
             await restart(response)
-            return 
 
 
 @kanha_cmd(
