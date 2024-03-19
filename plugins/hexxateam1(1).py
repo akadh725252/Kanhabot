@@ -118,8 +118,9 @@ async def main(e, other_usr):
             resp = await do_click(response, 0, 0)
             if resp == True:
                 return
-        elif response == True or not response.buttons or "Prize: " in response.message:
-            return
+        elif if "Daily limit for battling has been reached, no prize will be given" in response.raw_text:
+            await restart(response)
+            return 
 
 
 @kanha_cmd(
