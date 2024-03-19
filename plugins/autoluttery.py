@@ -13,7 +13,7 @@ async def my_event_handler(event):
          await asyncio.sleep(4)
          await event.click(0)
  
-@kanh_bot.on(events.MessageEdited)
+@kanha_bot.on(events.MessageEdited)
 async def my_event_handler(event):
       if 'Multiplier fee deducted:' in event.raw_text:
          await asyncio.sleep(4)
