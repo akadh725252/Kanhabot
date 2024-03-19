@@ -126,22 +126,6 @@ async def main(e, other_usr):
     pattern="hexa( (.*)|$)",
 )
 async def autohexa(e):
-    i = True
-    await e.respond("team changing")
-    if i == True:
-      chat = e.chat_id
-      async with kanha_bot.conversation(chat) as conv :
-        await conv.send_message("/myteam")
-        resp = await conv.get_response(timeout=16)
-        await asyncio.sleep(2)
-        await resp.click(text="Team 1")
-        await asyncio.sleep(2)
-        await resp.click(text="Team 1")
-        await asyncio.sleep(2)
-        await resp.click(text="Team 1")
-        await asyncio.sleep(2)
-        await conv.send_message('done.click.team1')
-        await asyncio.sleep(30)
     args = e.pattern_match.group(2)
     if not args:
         return await e.eor("`Whom should I fight with..?`", time=8)
