@@ -87,10 +87,10 @@ async def auto_battle(chat, msg_id):
         return await click_rnd_button(response)
     else:
         if 'missed' in response.raw_text:
-            await do_click(0,0)
+            await do_click(response, 0, 0)
             return 
         if 'dodged' in response.raw_text:
-            await do_click(0,0)
+            await do_click(response, 0, 0)
             return
 @kanha_bot.on(
     NewMessage(
