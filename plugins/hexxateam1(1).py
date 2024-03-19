@@ -118,7 +118,7 @@ async def main(e, other_usr):
             resp = await do_click(response, 0, 0)
             if resp == True:
                 return
-        elif if "Daily limit for battling has been reached, no prize will be given" in response.raw_text:
+        elif "Daily limit for battling has been reached, no prize will be given" in response.raw_text:
             await restart(response)
             return 
 
