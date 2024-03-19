@@ -116,12 +116,23 @@ async def main(e, other_usr):
 
     while True:
         response = await watch_edits(e.chat_id, hexa_response.id)
-        if "Daily limit for battling has been reached, no prize will be given" in response.raw_text:
-            os.execl(sys.executable, sys.executable, *sys.argv)
-        elif isinstance(response, Message):
+        if isinstance(response, Message):
             resp = await do_click(response, 0, 0)
             if resp == True:
                 return
+async def watch_newmessage(chat, msg_id, timeout=6):
+    async with kanha_bot.conversation(chat, timeout=timeout) as conv:
+        func2 = "Daily limit for battling has been reached, no prize will be given"
+        response = conv.wait_event(
+            MessageEdited(
+                incoming=True,
+                from_users=HEXA_ID,
+            )
+        )
+    while True:
+        response = await watch_newmessage(e.chat_id,hexa_response.id)
+        if func2 in response.raw_text:
+            os.execl(sys.executable, sys.executable, *sys.argv)
 @kanha_cmd(
     pattern="hexa( (.*)|$)",
 )
