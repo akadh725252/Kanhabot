@@ -41,7 +41,7 @@ async def get_response(
 
 async def re_fetch(m):
     return await m.client.get_messages(m.chat_id, ids=m.id)
-    
+
 @kanha_bot.on(event.MessageEdited)    
 async def daily(chat, msg_id):
     await asyncio.sleep(1)
@@ -119,13 +119,13 @@ async def main(e, other_usr):
 
     while True:
         response = await watch_edits(e.chat_id, hexa_response.id)
-        if isinstance(response, Message):
+        respon = await daily(e.chat_id, hexa_response.id)
+        if 'Daily limit for battling has been reached, no prize will be given' in respon.raw_text:
+                break 
+        elif isinstance(response, Message):
             resp = await do_click(response, 0, 0)
             if resp == True:
                 return
-        elif response = await daily(e.chat.id, hexa_response.id):
-            if 'Daily limit for battling has been reached, no prize will be given' in daily.raw_text:
-                break 
 @kanha_cmd(
     pattern="hexa( (.*)|$)",
 )
@@ -141,7 +141,7 @@ async def autohexa(e):
         await resp.click(text="Team 1")
         await asyncio.sleep(2)
         await resp.click(text="Team 1")
-        await asyncio.sleep(2)
+        await asynci.sleep(2)
         await resp.click(text="Team 1")
         await asyncio.sleep(2)
         await conv.send_message('done.click.team1')
