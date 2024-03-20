@@ -42,10 +42,6 @@ async def get_response(
 async def re_fetch(m):
     return await m.client.get_messages(m.chat_id, ids=m.id)
 
-@kanha_bot.on(events.MessageEdited)    
-async def daily(chat, msg_id):
-    await asyncio.sleep(1)
-
 async def watch_edits(chat, msg_id, timeout=16):
     async with kanha_bot.conversation(chat, timeout=timeout) as conv:
         func = lambda e: e.id == msg_id and search(
@@ -119,10 +115,7 @@ async def main(e, other_usr):
 
     while True:
         response = await watch_edits(e.chat_id, hexa_response.id)
-        respon = await daily(e.chat_id, hexa_response.id)
-        if 'Daily limit for battling has been reached, no prize will be given' in respon.raw_text:
-                break 
-        elif isinstance(response, Message):
+        if isinstance(response, Message):
             resp = await do_click(response, 0, 0)
             if resp == True:
                 return
