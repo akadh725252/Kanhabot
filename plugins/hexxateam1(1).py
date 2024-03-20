@@ -141,7 +141,7 @@ async def autohexa(e):
         await resp.click(text="Team 1")
         await asyncio.sleep(2)
         await resp.click(text="Team 1")
-        await asynci.sleep(2)
+        await asyncio.sleep(2)
         await resp.click(text="Team 1")
         await asyncio.sleep(2)
         await conv.send_message('done.click.team1')
