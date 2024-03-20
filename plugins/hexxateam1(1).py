@@ -5,7 +5,7 @@ from random import choice, randrange
 from re import search
 import os
 import sys
-
+from telethon import events
 from telethon.events import NewMessage, MessageEdited
 from telethon.errors import DataInvalidError, MessageNotModifiedError
 from telethon.tl.custom import Message
@@ -42,7 +42,7 @@ async def get_response(
 async def re_fetch(m):
     return await m.client.get_messages(m.chat_id, ids=m.id)
 
-@kanha_bot.on(event.MessageEdited)    
+@kanha_bot.on(events.MessageEdited)    
 async def daily(chat, msg_id):
     await asyncio.sleep(1)
 
