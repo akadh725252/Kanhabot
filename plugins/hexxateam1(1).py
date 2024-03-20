@@ -43,7 +43,7 @@ async def re_fetch(m):
     return await m.client.get_messages(m.chat_id, ids=m.id)
     
 @kanha_bot.on(event.MessageEdited)    
-async def daily(chat, msg_id)
+async def daily(chat, msg_id):
 
 async def watch_edits(chat, msg_id, timeout=16):
     async with kanha_bot.conversation(chat, timeout=timeout) as conv:
