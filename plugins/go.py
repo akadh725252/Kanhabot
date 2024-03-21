@@ -5,7 +5,6 @@ from random import randint
 chat = 572621020
 hunt = False
 pokeballs = ["Poke Balls"]
-expert = "An expert"
 
 @kanha_bot.on(events.NewMessage(outgoing=True, pattern='.go'))
 async def begin(event):
