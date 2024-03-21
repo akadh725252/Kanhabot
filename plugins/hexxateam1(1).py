@@ -3,7 +3,9 @@
 import asyncio
 from random import choice, randrange
 from re import search
-
+import os
+import sys
+from telethon import events
 from telethon.events import NewMessage, MessageEdited
 from telethon.errors import DataInvalidError, MessageNotModifiedError
 from telethon.tl.custom import Message
@@ -39,7 +41,6 @@ async def get_response(
 
 async def re_fetch(m):
     return await m.client.get_messages(m.chat_id, ids=m.id)
-
 
 async def watch_edits(chat, msg_id, timeout=16):
     async with kanha_bot.conversation(chat, timeout=timeout) as conv:
@@ -118,10 +119,6 @@ async def main(e, other_usr):
             resp = await do_click(response, 0, 0)
             if resp == True:
                 return
-        elif response == True or not response.buttons or "Prize: " in response.message:
-            return
-
-
 @kanha_cmd(
     pattern="hexa( (.*)|$)",
 )
