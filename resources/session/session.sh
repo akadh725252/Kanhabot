@@ -29,4 +29,5 @@ pkg install python wget -y
 wget https://raw.githubusercontent.com/Teamkanha/kanha/main/resources/session/ssgen.py
 pip uninstall telethon -y && install telethon
 clear
+cd res*/session/
 python3 ssgen.py
