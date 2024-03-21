@@ -31,7 +31,7 @@ async def handle_hunt(event):
         hun = True
         message = await kanha_bot.get_messages(chat, ids=event.message.id)
         if "✨" in event.raw_text:
-            await zzz(randint(1, 2)
+            await zzz(randint(1, 2))
             await message.click(text='Poke Balls')
             await message.click(text='Ultra')
             await message.click(text='Great')
