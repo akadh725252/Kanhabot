@@ -31,8 +31,8 @@ async def handle_hunt(event):
         hun = True
         message = await kanha_bot.get_messages(chat, ids=event.message.id)
         if "✨" in event.raw_text:
+            await zzz(randint(1, 2)
             await message.click(text='Poke Balls')
-            await zzz(randint(5, 7))
             await message.click(text='Ultra')
             await message.click(text='Great')
             pass
@@ -62,8 +62,7 @@ async def handle_hunt(event):
                 except:
                     await zzz(3, 5)
                     await kanha_bot.send_message(chat, "/hunt")
-        elif "Daily limit for battling" in event.raw_text:
-          global hunt  
+        elif "Daily limit for battling" in event.raw_text:  
           hunt=False
 @kanha_bot.on(events.MessageEdited(chats=chat))
 async def cacther(event):
