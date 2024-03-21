@@ -95,3 +95,5 @@ async def handle_battle(event):
             message = await kanha_bot.get_messages(chat, ids=event.message.id)
             await zzz(2)
             await message.click(0, 1)
+            await message.click(0, 0)
+            await message.click(1, 0)
